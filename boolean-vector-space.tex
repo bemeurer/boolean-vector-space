@@ -8,7 +8,7 @@
 
 \newtheorem*{theorem}{Theorem}
 
-\title{Proving that the Boolean Algebra forms a vector space}
+\title{Proving that the Boolean algebra forms a vector space}
 \date{September 27, 2016}
 \author{Bernardo Meurer}
 \begin{document}
@@ -21,80 +21,80 @@ We define a Boolean algebra as a set of $B$ elements $a,b,\dots$ which satisfies
 the following axioms\cite{booleanalgebra}:
 
 \begin{enumerate}
-  \item $B$ has two binary operators $\wedge$ or $\cdot$ (logical AND) and
-        $\vee$ or $+$ (logical OR)
-  \item Idempotence
-  \begin{itemize}
-    \item $a\wedge a = a \vee a = a$
-  \end{itemize}
-  \item Commutative law
-  \begin{itemize}
-    \item $a \wedge b = b \wedge a$
-    \item $a \vee b = b \vee a$
-  \end{itemize}
-  \item Associative law
-  \begin{itemize}
-    \item $a \wedge (b \wedge c) = (a \wedge b) \wedge c$
-    \item $a \vee (b \vee c) = (a \vee b) \vee c$
-  \end{itemize}
-  \item Absorption law
-  \begin{itemize}
-    \item $a \wedge (a \vee b) = a \vee (a \wedge b) = a$
-  \end{itemize}
-  \item Mutual distributiveness
-  \begin{itemize}
-    \item $a \wedge (b \vee c) = (a \wedge b) \vee (a \wedge c)$
-    \item $a \vee (b \wedge c) = (a \vee b) \wedge (a \vee c)$
-  \end{itemize}
-  \item $B$ contains universal bounds $\emptyset$ (empty set) and $I$
-  (universal set)
-  \begin{itemize}
-    \item $\emptyset \wedge a = \emptyset$
-    \item $\emptyset \vee a = a$
-    \item $I \wedge a = a$
-    \item $I \vee a = I$
-  \end{itemize}
-  \item $B$ has a unary operator $a\rightarrow a'$ such that
-  \begin{itemize}
-    \item $a \wedge a' = \emptyset$
-    \item $a \vee a' = I$
-  \end{itemize}
+	\item $B$ has two binary operators $\wedge$ or $\cdot$ (logical AND) and
+	      $\vee$ or $+$ (logical OR)
+	\item Idempotence
+	      \begin{itemize}
+	      	\item $a\wedge a = a \vee a = a$
+	      \end{itemize}
+	\item Commutative law
+	      \begin{itemize}
+	      	\item $a \wedge b = b \wedge a$
+	      	\item $a \vee b = b \vee a$
+	      \end{itemize}
+	\item Associative law
+	      \begin{itemize}
+	      	\item $a \wedge (b \wedge c) = (a \wedge b) \wedge c$
+	      	\item $a \vee (b \vee c) = (a \vee b) \vee c$
+	      \end{itemize}
+	\item Absorption law
+	      \begin{itemize}
+	      	\item $a \wedge (a \vee b) = a \vee (a \wedge b) = a$
+	      \end{itemize}
+	\item Mutual distributiveness
+	      \begin{itemize}
+	      	\item $a \wedge (b \vee c) = (a \wedge b) \vee (a \wedge c)$
+	      	\item $a \vee (b \wedge c) = (a \vee b) \wedge (a \vee c)$
+	      \end{itemize}
+	\item $B$ contains universal bounds $\emptyset$ (empty set) and $I$
+	      (universal set)
+	      \begin{itemize}
+	      	\item $\emptyset \wedge a = \emptyset$
+	      	\item $\emptyset \vee a = a$
+	      	\item $I \wedge a = a$
+	      	\item $I \vee a = I$
+	      \end{itemize}
+	\item $B$ has a unary operator $a\rightarrow a'$ such that
+	      \begin{itemize}
+	      	\item $a \wedge a' = \emptyset$
+	      	\item $a \vee a' = I$
+	      \end{itemize}
 \end{enumerate}
 If the truth values $a, b$ are interpreted as integers $0, 1$ our operators can
 be expressed with ordinary arithmetic, or by minimum/maximum functions
 \cite{algebrainterp}:
 
 \begin{enumerate}
-  \item $a \wedge b = a \times b = \min(a,b)$
-  \item $a \vee b = a + b - (a \times b) = \max(a,b)$
-  \item $\neg a\text{ or }\bar{a} = 1 - a$
+	\item $a \wedge b = a \times b = \min(a,b)$
+	\item $a \vee b = a + b - (a \times b) = \max(a,b)$
+	\item $\neg a\text{ or }\bar{a} = 1 - a$
 \end{enumerate}
 We may also express $a \wedge b$, $a \vee b$, and $\neg a$ with a truth table
 
 \begin{table}
-\parbox{.45\linewidth}{
-\centering
-\begin{tabular}{@{}c c c c @{}}
-\toprule
-$a$ & $b$ & $a \wedge b$ & $a \vee b$ \\ \toprule
-0   & 0   & 0            & 0          \\ \midrule
-0   & 1   & 0            & 1          \\ \midrule
-1   & 0   & 0            & 1          \\ \midrule
-1   & 1   & 1            & 1          \\ \bottomrule
-\end{tabular}
-\caption{Truth table for binary operators}
-}
-\hfill
-\parbox{.45\linewidth}{
-\centering
-\begin{tabular}{@{} c c @{}}
-\toprule
-$a$ & $\neg a$ \\ \toprule
-0   & 1        \\ \midrule
-1   & 0        \\ \bottomrule
-\end{tabular}
-\caption{Truth table for unary operator }
-}
+	\parbox{.45\linewidth}{
+		\centering
+		\begin{tabular}{@{}c c c c @{}}
+			\toprule
+			$a$ & $b$ & $a \wedge b$ & $a \vee b$ \\ \toprule
+			0   & 0   & 0            & 0          \\ \midrule
+			0   & 1   & 0            & 1          \\ \midrule
+			1   & 0   & 0            & 1          \\ \midrule
+			1   & 1   & 1            & 1          \\ \bottomrule
+		\end{tabular}
+		\caption{Truth table for binary operators}
+	}
+	\hfill
+	\parbox{.45\linewidth}{
+		\centering
+		\begin{tabular}{@{} c c @{}}
+			\toprule
+			$a$ & $\neg a$ \\ \toprule
+			0   & 1        \\ \midrule
+			1   & 0        \\ \bottomrule
+		\end{tabular}
+		\caption{Truth table for unary operator }
+	}
 \end{table}
 
 \section{Defining a field}
@@ -104,42 +104,42 @@ We define a field as a triple $(F,+,\cdot)$ where $F$ is a set, and $+$, $\cdot$
 are binary operators that act on $F$, called addition and multiplication
 respectively, satisfying the following axioms\cite{field}:
 \begin{enumerate}
-  \item Addition ($+$) is an associative operation on $F$
-  \begin{itemize}
-    \item $\forall f,g,h \in F : f+(g+h) = (f+g)+h$
-  \end{itemize}
-  \item There is an identity element for addition
-  \begin{itemize}
-    \item $\forall f \in F: f + \nu = f$
-    \item The identity $\nu$ is unique and we will denote it by   $0$
-  \end{itemize}
-  \item Every element $x$ of $F$ is invertible for $+$
-  \begin{itemize}
-    \item The additive inverse of $x$ is unique, and will be denoted by $-x$
-  \end{itemize}
-  \item Multiplication ($\cdot$) is a commutative operation on $F$
-  \begin{itemize}
-    \item $\forall f,g \in F : f \cdot g = g \cdot f$
-  \end{itemize}
-  \item There is an identity element for multiplication
-  \begin{itemize}
-    \item $\forall f \in F: f \cdot \upsilon = f$
-    \item The identity $\upsilon$ is unique and we will denote it by $1$
-  \end{itemize}
-  \item Every element $x$ of $F$ except $0$ is invertible for $\cdot$
-  \begin{itemize}
-    \item The multiplicative inverse of $x$ is unique, we will denote it by
-          $x^{-1}$
-    \item We do not assume $0$ to be neither invertible nor non-invertible
-  \end{itemize}
-  \item Multiplication is distributive in regards to addition
-  \begin{itemize}
-    \item $\forall x,y,z \in F : x \cdot (y + z) = (x \cdot y) + (x \cdot z)$
-  \end{itemize}
-  \item The identities for addition and multiplication are distinct
-  \begin{itemize}
-    \item $0 \neq 1$
-  \end{itemize}
+	\item Addition ($+$) is an associative operation on $F$
+	      \begin{itemize}
+	      	\item $\forall f,g,h \in F : f+(g+h) = (f+g)+h$
+	      \end{itemize}
+	\item There is an identity element for addition
+	      \begin{itemize}
+	      	\item $\forall f \in F: f + \nu = f$
+	      	\item The identity $\nu$ is unique and we will denote it by   $0$
+	      \end{itemize}
+	\item Every element $x$ of $F$ is invertible for $+$
+	      \begin{itemize}
+	      	\item The additive inverse of $x$ is unique, and will be denoted by $-x$
+	      \end{itemize}
+	\item Multiplication ($\cdot$) is a commutative operation on $F$
+	      \begin{itemize}
+	      	\item $\forall f,g \in F : f \cdot g = g \cdot f$
+	      \end{itemize}
+	\item There is an identity element for multiplication
+	      \begin{itemize}
+	      	\item $\forall f \in F: f \cdot \upsilon = f$
+	      	\item The identity $\upsilon$ is unique and we will denote it by $1$
+	      \end{itemize}
+	\item Every element $x$ of $F$ except $0$ is invertible for $\cdot$
+	      \begin{itemize}
+	      	\item The multiplicative inverse of $x$ is unique, we will denote it by
+	      	      $x^{-1}$
+	      	\item We do not assume $0$ to be neither invertible nor non-invertible
+	      \end{itemize}
+	\item Multiplication is distributive in regards to addition
+	      \begin{itemize}
+	      	\item $\forall x,y,z \in F : x \cdot (y + z) = (x \cdot y) + (x \cdot z)$
+	      \end{itemize}
+	\item The identities for addition and multiplication are distinct
+	      \begin{itemize}
+	      	\item $0 \neq 1$
+	      \end{itemize}
 \end{enumerate}
 
 One might note that the commutativity of addition is not listed as an axiom,
@@ -147,27 +147,27 @@ this is due to the fact that said property can be obtained from the other axioms
 
 \begin{theorem}[Commutativity of addition]
 
-  Let $F$ be any field, then $+$ is a commutative operation on $F$.
-  $$\forall f,g \in F :  f + g = g + f$$
+	Let $F$ be any field, then $+$ is a commutative operation on $F$.
+	$$\forall f,g \in F :  f + g = g + f$$
 \end{theorem}
 \begin{proof}\cite{addcomm}
 
-Let $x, y$ be elements of $F$, from axiom 4.\ we have
-$$(1+x)\cdot(1+y)=(1+y)\cdot(1+x)$$
-Using axiom 7
-$$((1+x)\cdot 1)+((1+x)\cdot y) = ((1+y)\cdot 1)+((1+y)\cdot x)$$
-Axiom 5 gives us that $1$ is the multiplicative identity
-$$(1+x)+((1+x)\cdot y) = (1+y)+((1+y)\cdot x)$$
-Using axiom 1
-$$1+(x+((1+x)\cdot y)) = 1+(y+((1+y)\cdot x))$$
-By means of axiom 3 we have the law of cancellation which yields
-$$x+((1+x)\cdot y) = y+((1+y)\cdot x)$$
-Using axiom 7
-$$x+((1\cdot y)+(x\cdot y)) = y+((1\cdot x)+(y\cdot x))$$
-With axioms 1, 4, and 5
-$$x+y+(x\cdot y) = y+x+(x\cdot y)$$
-Finally by axiom 3
-$$x+y=y+x$$
+	Let $x, y$ be elements of $F$, from axiom 4.\ we have
+	$$(1+x)\cdot(1+y)=(1+y)\cdot(1+x)$$
+	Using axiom 7
+	$$((1+x)\cdot 1)+((1+x)\cdot y) = ((1+y)\cdot 1)+((1+y)\cdot x)$$
+	Axiom 5 gives us that $1$ is the multiplicative identity
+	$$(1+x)+((1+x)\cdot y) = (1+y)+((1+y)\cdot x)$$
+	Using axiom 1
+	$$1+(x+((1+x)\cdot y)) = 1+(y+((1+y)\cdot x))$$
+	By means of axiom 3 we have the law of cancellation which yields
+	$$x+((1+x)\cdot y) = y+((1+y)\cdot x)$$
+	Using axiom 7
+	$$x+((1\cdot y)+(x\cdot y)) = y+((1\cdot x)+(y\cdot x))$$
+	With axioms 1, 4, and 5
+	$$x+y+(x\cdot y) = y+x+(x\cdot y)$$
+	Finally by axiom 3
+	$$x+y=y+x$$
 \end{proof}
 \section{Boolean algebra as a field}
 \label{sec:Boolean algebra as a field}
