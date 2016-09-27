@@ -4,6 +4,7 @@
 \usepackage{amsthm}
 \usepackage{amssymb}
 \usepackage{booktabs}
+\usepackage{url}
 
 \newtheorem*{theorem}{Theorem}
 
@@ -17,7 +18,7 @@
 \label{sec:Defining the Boolean algebra}
 
 We define a Boolean algebra as a set of $B$ elements $a,b,\dots$ which satisfies
-the following axioms:
+the following axioms\cite{booleanalgebra}:
 
 \begin{enumerate}
   \item $B$ has two binary operators $\wedge$ or $\cdot$ (logical AND) and
@@ -60,7 +61,9 @@ the following axioms:
   \end{itemize}
 \end{enumerate}
 If the truth values $a, b$ are interpreted as integers $0, 1$ our operators can
-be expressed with ordinary arithmetic, or by minimum/maximum functions:
+be expressed with ordinary arithmetic, or by minimum/maximum functions
+\cite{algebrainterp}:
+
 \begin{enumerate}
   \item $a \wedge b = a \times b = \min(a,b)$
   \item $a \vee b = a + b - (a \times b) = \max(a,b)$
@@ -68,7 +71,7 @@ be expressed with ordinary arithmetic, or by minimum/maximum functions:
 \end{enumerate}
 We may also express $a \wedge b$, $a \vee b$, and $\neg a$ with a truth table
 
-\begin{table}[]
+\begin{table}
 \parbox{.45\linewidth}{
 \centering
 \begin{tabular}{@{}c c c c @{}}
@@ -97,9 +100,9 @@ $a$ & $\neg a$ \\ \toprule
 \section{Defining a field}
 \label{sec:Defining a field}
 
-We define a field as a triple $(F,+,\cdot)$ where $F$ is a set, $+$ and $\cdot$
+We define a field as a triple $(F,+,\cdot)$ where $F$ is a set, and $+$, $\cdot$
 are binary operators that act on $F$, called addition and multiplication
-respectively, satisfying the following axioms:
+respectively, satisfying the following axioms\cite{field}:
 \begin{enumerate}
   \item Addition ($+$) is an associative operation on $F$
   \begin{itemize}
@@ -143,10 +146,12 @@ One might note that the commutativity of addition is not listed as an axiom,
 this is due to the fact that said property can be obtained from the other axioms
 
 \begin{theorem}[Commutativity of addition]
+
   Let $F$ be any field, then $+$ is a commutative operation on $F$.
   $$\forall f,g \in F :  f + g = g + f$$
 \end{theorem}
-\begin{proof}
+\begin{proof}\cite{addcomm}
+
 Let $x, y$ be elements of $F$, from axiom 4.\ we have
 $$(1+x)\cdot(1+y)=(1+y)\cdot(1+x)$$
 Using axiom 7
@@ -178,5 +183,10 @@ barfoo
 \label{sec:Boolean algebra as a vector space}
 
 foobar
+
+\newpage
+
+\bibliographystyle{unsrt}
+\bibliography{boolean-vector-space}
 
 \end{document}
