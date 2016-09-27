@@ -1,0 +1,114 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{booktabs}
+\title{Proving that the Boolean Algebra forms a vector space}
+\date{September 27, 2016}
+\author{Bernardo Meurer}
+\begin{document}
+\maketitle
+\newpage
+\section{Defining the Boolean algebra}
+\label{sec:Defining the Boolean algebra}
+
+We define a Boolean algebra as a set of $B$ elements $a,b,\dots$ with the
+following properties:
+
+\begin{enumerate}
+  \item $B$ has two binary operators $\wedge$ or $\cdot$ (logical AND) and
+        $\vee$ or $+$ (logical OR)
+  \item Idempotence
+  \begin{itemize}
+    \item $a\wedge a = a \vee a = a$
+  \end{itemize}
+  \item Commutative law
+  \begin{itemize}
+    \item $a \wedge b = b \wedge a$
+    \item $a \vee b = b \vee a$
+  \end{itemize}
+  \item Associative law
+  \begin{itemize}
+    \item $a \wedge (b \wedge c) = (a \wedge b) \wedge c$
+    \item $a \vee (b \vee c) = (a \vee b) \vee c$
+  \end{itemize}
+  \item Absorption law
+  \begin{itemize}
+    \item $a \wedge (a \vee b) = a \vee (a \wedge b) = a$
+  \end{itemize}
+  \item Mutual distributiveness
+  \begin{itemize}
+    \item $a \wedge (b \vee c) = (a \wedge b) \vee (a \wedge c)$
+    \item $a \vee (b \wedge c) = (a \vee b) \wedge (a \vee c)$
+  \end{itemize}
+  \item $B$ contains universal bounds $\emptyset$ (empty set) and $I$
+  (universal set)
+  \begin{itemize}
+    \item $\emptyset \wedge a = \emptyset$
+    \item $\emptyset \vee a = a$
+    \item $I \wedge a = a$
+    \item $I \vee a = I$
+  \end{itemize}
+  \item $B$ has a unary operator $a\rightarrow a'$ such that
+  \begin{itemize}
+    \item $a \wedge a' = \emptyset$
+    \item $a \vee a' = I$
+  \end{itemize}
+\end{enumerate}
+If the truth values $a, b$ are interpreted as integers $0, 1$ our operators can
+be expressed with ordinary arithmetic, or by minimum/maximum functions:
+\begin{enumerate}
+  \item $a \wedge b = a \times b = \min(a,b)$
+  \item $a \vee b = a + b - (a \times b) = \max(a,b)$
+  \item $\neg a\text{ or }\bar{a} = 1 - a$
+\end{enumerate}
+We may also express $a \wedge b$, $a \vee b$, and $\neg a$ with a truth table
+
+\begin{table}[]
+\parbox{.45\linewidth}{
+\centering
+\begin{tabular}{@{}c c c c @{}}
+\toprule
+$a$ & $b$ & $a \wedge b$ & $a \vee b$ \\ \toprule
+0   & 0   & 0            & 0          \\ \midrule
+0   & 1   & 0            & 1          \\ \midrule
+1   & 0   & 0            & 1          \\ \midrule
+1   & 1   & 1            & 1          \\ \bottomrule
+\end{tabular}
+\caption{Truth table for binary operators}
+}
+\hfill
+\parbox{.45\linewidth}{
+\centering
+\begin{tabular}{@{} c c @{}}
+\toprule
+$a$ & $\neg a$ \\ \toprule
+0   & 1        \\ \midrule
+1   & 0        \\ \bottomrule
+\end{tabular}
+\caption{Truth table for unary operator }
+}
+\end{table}
+
+
+\section{Defining a field}
+\label{sec:Defining a field}
+
+bar
+
+\section{Boolean algebra as a field}
+\label{sec:Boolean algebra as a field}
+
+foobar
+
+\section{Fields as vector spaces}
+\label{sec:Fields as vector spaces}
+
+barfoo
+
+\section{Boolean algebra as a vector space}
+\label{sec:Boolean algebra as a vector space}
+
+foobar
+
+\end{document}
