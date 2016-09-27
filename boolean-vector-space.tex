@@ -1,8 +1,12 @@
 \documentclass{article}
 \usepackage[utf8]{inputenc}
 \usepackage{amsmath}
+\usepackage{amsthm}
 \usepackage{amssymb}
 \usepackage{booktabs}
+
+\newtheorem*{theorem}{Theorem}
+
 \title{Proving that the Boolean Algebra forms a vector space}
 \date{September 27, 2016}
 \author{Bernardo Meurer}
@@ -12,8 +16,8 @@
 \section{Defining the Boolean algebra}
 \label{sec:Defining the Boolean algebra}
 
-We define a Boolean algebra as a set of $B$ elements $a,b,\dots$ with the
-following properties:
+We define a Boolean algebra as a set of $B$ elements $a,b,\dots$ which satisfies
+the following axioms:
 
 \begin{enumerate}
   \item $B$ has two binary operators $\wedge$ or $\cdot$ (logical AND) and
@@ -90,12 +94,76 @@ $a$ & $\neg a$ \\ \toprule
 }
 \end{table}
 
-
 \section{Defining a field}
 \label{sec:Defining a field}
 
-bar
+We define a field as a triple $(F,+,\cdot)$ where $F$ is a set, $+$ and $\cdot$
+are binary operators that act on $F$, called addition and multiplication
+respectively, satisfying the following axioms:
+\begin{enumerate}
+  \item Addition ($+$) is an associative operation on $F$
+  \begin{itemize}
+    \item $\forall f,g,h \in F : f+(g+h) = (f+g)+h$
+  \end{itemize}
+  \item There is an identity element for addition
+  \begin{itemize}
+    \item $\forall f \in F: f + \nu = f$
+    \item The identity $\nu$ is unique and we will denote it by   $0$
+  \end{itemize}
+  \item Every element $x$ of $F$ is invertible for $+$
+  \begin{itemize}
+    \item The additive inverse of $x$ is unique, and will be denoted by $-x$
+  \end{itemize}
+  \item Multiplication ($\cdot$) is a commutative operation on $F$
+  \begin{itemize}
+    \item $\forall f,g \in F : f \cdot g = g \cdot f$
+  \end{itemize}
+  \item There is an identity element for multiplication
+  \begin{itemize}
+    \item $\forall f \in F: f \cdot \upsilon = f$
+    \item The identity $\upsilon$ is unique and we will denote it by $1$
+  \end{itemize}
+  \item Every element $x$ of $F$ except $0$ is invertible for $\cdot$
+  \begin{itemize}
+    \item The multiplicative inverse of $x$ is unique, we will denote it by
+          $x^{-1}$
+    \item We do not assume $0$ to be neither invertible nor non-invertible
+  \end{itemize}
+  \item Multiplication is distributive in regards to addition
+  \begin{itemize}
+    \item $\forall x,y,z \in F : x \cdot (y + z) = (x \cdot y) + (x \cdot z)$
+  \end{itemize}
+  \item The identities for addition and multiplication are distinct
+  \begin{itemize}
+    \item $0 \neq 1$
+  \end{itemize}
+\end{enumerate}
 
+One might note that the commutativity of addition is not listed as an axiom,
+this is due to the fact that said property can be obtained from the other axioms
+
+\begin{theorem}[Commutativity of addition]
+  Let $F$ be any field, then $+$ is a commutative operation on $F$.
+  $$\forall f,g \in F :  f + g = g + f$$
+\end{theorem}
+\begin{proof}
+Let $x, y$ be elements of $F$, from axiom 4.\ we have
+$$(1+x)\cdot(1+y)=(1+y)\cdot(1+x)$$
+Using axiom 7
+$$((1+x)\cdot 1)+((1+x)\cdot y) = ((1+y)\cdot 1)+((1+y)\cdot x)$$
+Axiom 5 gives us that $1$ is the multiplicative identity
+$$(1+x)+((1+x)\cdot y) = (1+y)+((1+y)\cdot x)$$
+Using axiom 1
+$$1+(x+((1+x)\cdot y)) = 1+(y+((1+y)\cdot x))$$
+By means of axiom 3 we have the law of cancellation which yields
+$$x+((1+x)\cdot y) = y+((1+y)\cdot x)$$
+Using axiom 7
+$$x+((1\cdot y)+(x\cdot y)) = y+((1\cdot x)+(y\cdot x))$$
+With axioms 1, 4, and 5
+$$x+y+(x\cdot y) = y+x+(x\cdot y)$$
+Finally by axiom 3
+$$x+y=y+x$$
+\end{proof}
 \section{Boolean algebra as a field}
 \label{sec:Boolean algebra as a field}
 
