@@ -18,7 +18,7 @@
 \section{Defining the Boolean algebra}
 \label{sec:Defining the Boolean algebra}
 
-We define a Boolean algebra as a set of $B$ elements $a,b,\dots$ which satisfies
+We define a Boolean algebra as a set $B$ of elements $a,b,\dots$ which satisfies
 the following axioms\cite{booleanalgebra}:
 
 \begin{enumerate}
@@ -61,9 +61,15 @@ the following axioms\cite{booleanalgebra}:
 	      	\item $a \vee a' = I$
 	      \end{itemize}
 \end{enumerate}
-If the truth values $a, b$ are interpreted as integers $0, 1$ our operators can
-be expressed with ordinary arithmetic, or by minimum/maximum functions
-\cite{algebrainterp}:
+
+\begin{theorem}
+  $B$ is a set composed of $2^n$ elements
+\end{theorem}
+\begin{proof}
+  TODO
+\end{proof}
+If we define be as $B = \{0,1\}$ our operators can be expressed with ordinary
+arithmetic, or by minimum/maximum functions\cite{algebrainterp}:
 
 \begin{enumerate}
 	\item $a \wedge b = a \times b = \min(a,b)$
