@@ -174,8 +174,26 @@ this is due to the fact that said property can be obtained from the other axioms
 \label{sec:Boolean algebra as a field}
 
 If we follow the previously stated definition of a field $F$, and compare it to
-the properties imposed on the set $B$ which described our algebra it will become
-clear that $B$ is itself a field.
+the properties imposed on the set $B$, which described our algebra, it will
+become clear that $B$ is itself a field.
+
+\begin{table}[h]
+\centering
+\begin{tabular}{@{}lll@{}}
+\toprule
+Property                                                    & Field      & Algebra               \\ \toprule
+Addition is associative                                     & Yes        & Yes                   \\ \midrule
+Addition has an identity element                            & 0          & 0                     \\ \midrule
+Every element $x$ is invertible for $+$                     & $-x$       & $\neg x$ or $\bar{x}$ \\ \midrule
+Multiplication is commutative                               & Yes        & Yes                   \\ \midrule
+Multiplication has an identity element                      & 1          & 1                     \\ \midrule
+Every element $x$ of $F$ except 0 is invertible for $\cdot$ & $\text{?}$ & $\text{?}$            \\ \midrule
+Multiplication is distributive in regards to addition       & Yes        & Yes                   \\ \midrule
+The identities for addition and multiplication are distinct & $0 \neq 1$ & $0 \neq 1$            \\ \bottomrule
+\end{tabular}
+\caption{Comparing $B$ to $F$}
+\label{algebrafieldproof}
+\end{table}
 
 \section{Fields as vector spaces}
 \label{sec:Fields as vector spaces}
